@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.State" parent="android:Theme.Material.Light.NoActionBar" />
+    <style name="Theme.State.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">#000000</item> <!-- Cor de fundo -->
+        <item name="windowSplashScreenAnimatedIcon">@drawable/logo_dark</item> <!-- Ícone central -->
+        <item name="postSplashScreenTheme">@android:style/Theme.Material.Light.NoActionBar</item> <!-- Tema do app após a Splash -->
+    </style>
+</resources>
