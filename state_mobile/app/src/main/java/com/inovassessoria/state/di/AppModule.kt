@@ -8,8 +8,10 @@ import okhttp3.logging.HttpLoggingInterceptor
 import com.inovassessoria.state.BuildConfig
 import com.inovassessoria.state.repositories.AuthRepository
 import com.inovassessoria.state.repositories.EnterpriseRepository
+import com.inovassessoria.state.repositories.InstitutionRepository
 import com.inovassessoria.state.repositories.UserRepository
 import com.inovassessoria.state.services.EnterpriseService
+import com.inovassessoria.state.services.InstitutionService
 import com.inovassessoria.state.services.UserRegisterService
 import com.inovassessoria.state.ui.viewmodels.UserViewModel
 import org.koin.core.module.dsl.bind
@@ -24,6 +26,7 @@ val appModule = module {
     singleOf(::AuthRepository) { bind<AuthRepository>() }
     singleOf(::UserRepository) { bind<UserRepository>() }
     singleOf(::EnterpriseRepository) { bind<EnterpriseRepository>() }
+    singleOf(::InstitutionRepository) { bind<InstitutionRepository>() }
 
     viewModelOf(::AuthViewModel)
     viewModelOf(::UserViewModel)
@@ -61,5 +64,10 @@ val networkModule = module {
     // Serviço de Empresas
     single {
         get<Retrofit>().create(EnterpriseService::class.java)
+    }
+
+    // Serviço de Instituições
+    single {
+        get<Retrofit>().create(InstitutionService::class.java)
     }
 }

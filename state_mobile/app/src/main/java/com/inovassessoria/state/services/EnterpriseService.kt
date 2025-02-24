@@ -1,12 +1,17 @@
 package com.inovassessoria.state.services
 
 import com.inovassessoria.state.models.TEnterprise
+import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
 import retrofit2.http.GET
-import retrofit2.http.Header
-import retrofit2.http.Headers
 
+@JsonClass(generateAdapter = true)
+data class EnterprisesResponse(
+    @field:Json(name="totalItems") val totalItems: Int,
+    @field:Json(name="items") val items: List<TEnterprise>
+)
 // Interface do serviço de enterprises
 interface EnterpriseService {
     @GET("enterprises/client")
-    suspend fun search(@Header("Authorization") authorization : String): TEnterprise
+    suspend fun search(): EnterprisesResponse
 }

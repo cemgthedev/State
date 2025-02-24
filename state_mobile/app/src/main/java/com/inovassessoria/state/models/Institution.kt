@@ -4,7 +4,7 @@ import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
-data class TUser(
+data class TInstitution(
     @field:Json(name="id") val id: Int? = null,
     @field:Json(name="name") val name: String,
     @field:Json(name="email") val email: String,

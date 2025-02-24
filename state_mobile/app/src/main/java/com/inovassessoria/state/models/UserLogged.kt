@@ -8,7 +8,7 @@ data class TUserLogged(
     @field:Json(name="id") val id: Int,
     @field:Json(name="name") val name: String,
     @field:Json(name="email") val email: String,
-    @field:Json(name="document") val document: String? = null,
+    @field:Json(name="document") val document: String,
     @field:Json(name="password") val password: String? = null,
     @field:Json(name="avatarUrl") val avatarUrl: String? = null,
     @field:Json(name="phone") val phone: String? = null,
@@ -25,6 +25,10 @@ data class TUserLogged(
     @field:Json(name="complement") val complement: String? = null,
     @field:Json(name="cep") val cep: String? = null,
     @field:Json(name="linkMap") val linkMap: String? = null,
+
+    @field:Json(name="enterpriseId") val enterpriseId: Int? = null,
+    @field:Json(name="institutionId") val institutionId: Int? = null,
+
     @field:Json(name="createdAt") val createdAt: String? = null,
     @field:Json(name="updatedAt") val updatedAt: String? = null,
     @field:Json(name="deletedAt") val deletedAt: String? = null,

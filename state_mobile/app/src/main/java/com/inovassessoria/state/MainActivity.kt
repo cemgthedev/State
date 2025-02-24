@@ -75,7 +75,7 @@ class MainActivity : ComponentActivity() {
                                 PersonalDataFormScreen(navController = navController, userViewModel = userViewModel)
                             }
                             composable("locationForm") {
-                                LocationFormScreen(navController = navController, userViewModel = userViewModel)
+                                LocationFormScreen(navController = navController, authViewModel = authViewModel, userViewModel = userViewModel)
                             }
                             composable("dashboard") {
                                 DashboardScreen(navController = navController, authViewModel = authViewModel)
